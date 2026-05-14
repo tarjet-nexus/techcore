@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXUS GPU — Tienda de Tarjetas Gráficas Gaming</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Iconos modernos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Tipografía futurista -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════
+       NAVEGACIÓN FIJA
+  ═══════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-icon"><i class="fas fa-microchip"></i></span>
+        <span class="logo-text">NEXUS<span class="logo-accent">GPU</span></span>
+      </div>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" class="nav-link active" data-section="home"><i class="fas fa-house"></i> Inicio</a></li>
+        <li><a href="#" class="nav-link" data-section="products"><i class="fas fa-gpu"></i><i class="fas fa-tv"></i> Productos</a></li>
+        <li>
+          <a href="#" class="nav-link" data-section="cart">
+            <i class="fas fa-cart-shopping"></i> Carrito
+            <span class="cart-badge" id="cartBadge">0</span>
+          </a>
+        </li>
+        <li><a href="#" class="nav-link" data-section="login"><i class="fas fa-user-astronaut"></i> Iniciar Sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN 1 — INICIO / HOME
+  ═══════════════════════════════════════════ -->
+  <section class="section active" id="section-home">
+
+    <!-- PARTÍCULAS DE FONDO -->
+    <canvas class="particles-canvas" id="particlesCanvas"></canvas>
+
+    <!-- HERO BANNER -->
+    <div class="hero">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          NUEVA GENERACIÓN DISPONIBLE
+        </div>
+        <h1 class="hero-title">
+          <span class="title-line">EL PODER</span>
+          <span class="title-line accent">GRÁFICO</span>
+          <span class="title-line">QUE MERECES</span>
+        </h1>
+        <p class="hero-sub">
+          Descubre las mejores tarjetas gráficas gaming del mercado. 
+          Rendimiento extremo, tecnología de vanguardia, entrega inmediata.
+        </p>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">+25</span><span class="stat-label">Modelos</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">3</span><span class="stat-label">Marcas top</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">4K</span><span class="stat-label">Ultra Gaming</span></div>
+        </div>
+        <div class="hero-buttons">
+          <button class="btn btn-primary" data-goto="products">
+            <i class="fas fa-rocket"></i> Ver Productos
+            <span class="btn-glow"></span>
+          </button>
+          <button class="btn btn-secondary" data-goto="cart">
+            <i class="fas fa-cart-shopping"></i> Mi Carrito
+          </button>
+          <button class="btn btn-ghost" data-goto="login">
+            <i class="fas fa-user-astronaut"></i> Iniciar Sesión
+          </button>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="gpu-showcase">
+          <div class="gpu-glow"></div>
+          <div class="gpu-card-visual">
+            <i class="fas fa-microchip gpu-icon-main"></i>
+            <div class="gpu-scan-line"></div>
+            <div class="gpu-circuit-lines">
+              <div class="circuit-line c1"></div>
+              <div class="circuit-line c2"></div>
+              <div class="circuit-line c3"></div>
+              <div class="circuit-line c4"></div>
+            </div>
+          </div>
+          <div class="rotating-ring ring-1"></div>
+          <div class="rotating-ring ring-2"></div>
+          <div class="rotating-ring ring-3"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CARDS DE CARACTERÍSTICAS -->
+    <div class="features-strip">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+        <h3>Ultra Performance</h3>
+        <p>Las GPUs más potentes para gaming 4K y ray tracing en tiempo real</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+        <h3>Garantía Oficial</h3>
+        <p>Productos 100% originales con garantía de fabricante incluida</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-truck-fast"></i></div>
+        <h3>Envío Express</h3>
+        <p>Recibe tu GPU en 24-48 horas con seguimiento en tiempo real</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-headset"></i></div>
+        <h3>Soporte 24/7</h3>
+        <p>Expertos en hardware gaming disponibles para ayudarte siempre</p>
+      </div>
+    </div>
+
+    <!-- MARCAS -->
+    <div class="brands-section">
+      <p class="brands-label">MARCAS DISPONIBLES</p>
+      <div class="brands-row">
+        <div class="brand-chip nvidia">
+          <i class="fas fa-circle-dot"></i> NVIDIA
+        </div>
+        <div class="brand-chip amd">
+          <i class="fas fa-fire"></i> AMD
+        </div>
+        <div class="brand-chip intel">
+          <i class="fas fa-atom"></i> Intel
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN 2 — PRODUCTOS
+  ═══════════════════════════════════════════ -->
+  <section class="section" id="section-products">
+    <div class="section-header">
+      <div class="section-badge"><i class="fas fa-tv"></i> CATÁLOGO</div>
+      <h2 class="section-title">Tarjetas Gráficas <span class="accent">Gaming</span></h2>
+      <p class="section-sub">Elige el poder que tu build merece</p>
+    </div>
+
+    <!-- FILTROS Y BÚSQUEDA -->
+    <div class="products-controls">
+      <div class="search-box">
+        <i class="fas fa-magnifying-glass search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Buscar tarjeta gráfica..." class="search-input" />
+        <button class="search-clear" id="searchClear"><i class="fas fa-xmark"></i></button>
+      </div>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">
+          <i class="fas fa-th-large"></i> Todos
+        </button>
+        <button class="filter-btn nvidia-btn" data-filter="nvidia">
+          <i class="fas fa-circle-dot"></i> NVIDIA
+        </button>
+        <button class="filter-btn amd-btn" data-filter="amd">
+          <i class="fas fa-fire"></i> AMD
+        </button>
+        <button class="filter-btn intel-btn" data-filter="intel">
+          <i class="fas fa-atom"></i> Intel
+        </button>
+      </div>
+    </div>
+
+    <!-- GRID DE PRODUCTOS -->
+    <div class="products-grid" id="productsGrid">
+      <!-- Generado por JavaScript -->
+    </div>
+
+    <!-- ESTADO VACÍO (sin resultados) -->
+    <div class="empty-state" id="emptyState">
+      <i class="fas fa-search-minus"></i>
+      <p>No se encontraron tarjetas gráficas</p>
+      <span>Intenta con otro término de búsqueda o filtro</span>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN 3 — CARRITO
+  ═══════════════════════════════════════════ -->
+  <section class="section" id="section-cart">
+    <div class="section-header">
+      <div class="section-badge"><i class="fas fa-cart-shopping"></i> CARRITO</div>
+      <h2 class="section-title">Mi <span class="accent">Carrito</span></h2>
+      <p class="section-sub">Revisa y confirma tu pedido</p>
+    </div>
+
+    <div class="cart-layout">
+      <!-- Lista de items -->
+      <div class="cart-items-container">
+        <div class="cart-items-list" id="cartItemsList">
+          <!-- Generado por JS -->
+        </div>
+        <!-- Carrito vacío -->
+        <div class="cart-empty" id="cartEmpty">
+          <div class="cart-empty-icon">
+            <i class="fas fa-cart-xmark"></i>
+          </div>
+          <h3>Tu carrito está vacío</h3>
+          <p>Agrega las GPUs que necesitas para tu build gaming</p>
+          <button class="btn btn-primary" data-goto="products">
+            <i class="fas fa-rocket"></i> Ver Productos
+          </button>
+        </div>
+      </div>
+
+      <!-- Resumen del pedido -->
+      <div class="cart-summary" id="cartSummary">
+        <div class="summary-card">
+          <h3 class="summary-title"><i class="fas fa-receipt"></i> Resumen del Pedido</h3>
+          <div class="summary-lines">
+            <div class="summary-line">
+              <span>Subtotal</span>
+              <span id="cartSubtotal">$0.00</span>
+            </div>
+            <div class="summary-line">
+              <span>Envío Express</span>
+              <span class="free-tag">GRATIS</span>
+            </div>
+            <div class="summary-line">
+              <span>Impuestos (12%)</span>
+              <span id="cartTax">$0.00</span>
+            </div>
+          </div>
+          <div class="summary-total">
+            <span>TOTAL</span>
+            <span id="cartTotal">$0.00</span>
+          </div>
+          <button class="btn btn-primary btn-full" id="checkoutBtn">
+            <i class="fas fa-credit-card"></i> Proceder al Pago
+            <span class="btn-glow"></span>
+          </button>
+          <button class="btn btn-ghost btn-full" data-goto="products">
+            <i class="fas fa-arrow-left"></i> Seguir Comprando
+          </button>
+        </div>
+        <div class="security-badges">
+          <div class="sec-badge"><i class="fas fa-lock"></i> Pago Seguro</div>
+          <div class="sec-badge"><i class="fas fa-shield-check"></i> SSL</div>
+          <div class="sec-badge"><i class="fas fa-rotate-left"></i> Devoluciones</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECCIÓN 4 — LOGIN
+  ═══════════════════════════════════════════ -->
+  <section class="section" id="section-login">
+    <div class="login-page">
+      <canvas class="login-canvas" id="loginCanvas"></canvas>
+      <div class="login-card">
+        <div class="login-header">
+          <div class="login-logo">
+            <i class="fas fa-microchip"></i>
+          </div>
+          <h2>NEXUS<span class="accent">GPU</span></h2>
+          <p>Accede a tu cuenta gaming</p>
+        </div>
+        <form class="login-form" id="loginForm" novalidate>
+          <div class="form-group">
+            <label for="loginUser">Usuario o Correo</label>
+            <div class="input-wrapper">
+              <i class="fas fa-user input-icon"></i>
+              <input type="text" id="loginUser" placeholder="gamer@nexusgpu.com" autocomplete="username" />
+              <div class="input-border"></div>
+            </div>
+            <span class="field-error" id="userError"></span>
+          </div>
+          <div class="form-group">
+            <label for="loginPass">Contraseña</label>
+            <div class="input-wrapper">
+              <i class="fas fa-lock input-icon"></i>
+              <input type="password" id="loginPass" placeholder="••••••••••" autocomplete="current-password" />
+              <button type="button" class="pass-toggle" id="passToggle">
+                <i class="fas fa-eye" id="passEyeIcon"></i>
+              </button>
+              <div class="input-border"></div>
+            </div>
+            <span class="field-error" id="passError"></span>
+          </div>
+          <div class="form-options">
+            <label class="remember-check">
+              <input type="checkbox" id="rememberMe" />
+              <span class="custom-check"></span>
+              Recordarme
+            </label>
+            <a href="#" class="forgot-link">¿Olvidaste tu contraseña?</a>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full login-btn">
+            <i class="fas fa-right-to-bracket"></i> Iniciar Sesión
+            <span class="btn-glow"></span>
+          </button>
+        </form>
+        <div class="login-footer">
+          <p>¿No tienes cuenta? <a href="#" class="register-link">Crear cuenta gratis</a></p>
+          <div class="login-divider"><span>o continúa con</span></div>
+          <div class="social-buttons">
+            <button class="social-btn"><i class="fab fa-google"></i> Google</button>
+            <button class="social-btn"><i class="fab fa-discord"></i> Discord</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       MODAL DE PRODUCTO
+  ═══════════════════════════════════════════ -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-container">
+      <button class="modal-close" id="modalClose"><i class="fas fa-xmark"></i></button>
+      <div class="modal-content" id="modalContent">
+        <!-- Generado por JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATIONS -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- LOADER / CHECKOUT MODAL -->
+  <div class="checkout-overlay" id="checkoutOverlay">
+    <div class="checkout-modal">
+      <div class="checkout-icon"><i class="fas fa-circle-check"></i></div>
+      <h3>¡Pedido Realizado!</h3>
+      <p>Tu pedido ha sido procesado exitosamente. Recibirás un correo de confirmación pronto.</p>
+      <button class="btn btn-primary" id="checkoutDone">
+        <i class="fas fa-house"></i> Volver al Inicio
+      </button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
