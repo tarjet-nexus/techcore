@@ -558,3 +558,64 @@ if (loginForm) {
 }
 
 console.log('NEXUS GPU FULL CARGADO');
+// ============================================
+// FILTROS DE CATEGORÍAS
+// ============================================
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+
+filterButtons.forEach(button => {
+
+    button.addEventListener('click', () => {
+
+        filterButtons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        button.classList.add('active');
+
+        const filter = button.dataset.filter;
+
+        productsGrid.innerHTML = '';
+
+        const filteredProducts = filter === 'all'
+            ? products
+            : products.filter(product => product.brand === filter);
+
+        filteredProducts.forEach(product => {
+
+            const card = document.createElement('div');
+
+            card.className = 'product-card';
+
+            card.innerHTML = `
+
+                <div class="card-img-wrap">
+                    <img src="${product.image}" class="card-img">
+                </div>
+
+                <div class="card-body">
+
+                    <h3>${product.name}</h3>
+
+                    <p class="price">
+                        $${product.price}
+                    </p>
+
+                    <button class="view-btn">
+                        Ver más
+                    </button>
+
+                </div>
+            `;
+
+            card.addEventListener('click', () => {
+                openModal(product);
+            });
+
+            productsGrid.appendChild(card);
+        });
+
+    });
+
+});
