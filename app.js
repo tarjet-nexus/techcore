@@ -349,13 +349,59 @@ const products = [
 
 const productsGrid = document.getElementById('productsGrid');
 
+// ============================================
+// RENDER PRODUCTOS
+// ============================================
+
+let currentFilter = 'all';
+
 function renderProducts() {
 
     if (!productsGrid) return;
 
     productsGrid.innerHTML = '';
 
-    products.forEach(product => {
+    const filteredProducts = currentFilter === 'all'
+        ? products
+        : products.filter(product => product.brand === currentFilter);
+
+    filteredProducts.forEach(product => {
+
+        const card = document.createElement('div');
+
+        card.className = 'product-card';
+
+        card.innerHTML = `
+
+            <div class="card-img-wrap">
+                <img src="${product.image}" class="card-img">
+            </div>
+
+            <div class="card-body">
+
+                <h3>${product.name}</h3>
+
+                <p class="price">
+                    $${product.price}
+                </p>
+
+                <button class="view-btn">
+                    Ver más
+                </button>
+
+            </div>
+        `;
+
+        card.addEventListener('click', () => {
+
+            openModal(product);
+        });
+
+        productsGrid.appendChild(card);
+    });
+}
+
+renderProducts();
 
         const card = document.createElement('div');
 
@@ -559,7 +605,7 @@ if (loginForm) {
 
 console.log('NEXUS GPU FULL CARGADO');
 // ============================================
-// FILTROS DE CATEGORÍAS
+// FILTROS
 // ============================================
 
 const filterButtons = document.querySelectorAll('.filter-btn');
@@ -574,48 +620,9 @@ filterButtons.forEach(button => {
 
         button.classList.add('active');
 
-        const filter = button.dataset.filter;
+        currentFilter = button.dataset.filter;
 
-        productsGrid.innerHTML = '';
-
-        const filteredProducts = filter === 'all'
-            ? products
-            : products.filter(product => product.brand === filter);
-
-        filteredProducts.forEach(product => {
-
-            const card = document.createElement('div');
-
-            card.className = 'product-card';
-
-            card.innerHTML = `
-
-                <div class="card-img-wrap">
-                    <img src="${product.image}" class="card-img">
-                </div>
-
-                <div class="card-body">
-
-                    <h3>${product.name}</h3>
-
-                    <p class="price">
-                        $${product.price}
-                    </p>
-
-                    <button class="view-btn">
-                        Ver más
-                    </button>
-
-                </div>
-            `;
-
-            card.addEventListener('click', () => {
-                openModal(product);
-            });
-
-            productsGrid.appendChild(card);
-        });
-
+        renderProducts();
     });
 
 });
