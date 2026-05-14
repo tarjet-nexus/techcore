@@ -349,59 +349,13 @@ const products = [
 
 const productsGrid = document.getElementById('productsGrid');
 
-// ============================================
-// RENDER PRODUCTOS
-// ============================================
-
-let currentFilter = 'all';
-
 function renderProducts() {
 
     if (!productsGrid) return;
 
     productsGrid.innerHTML = '';
 
-    const filteredProducts = currentFilter === 'all'
-        ? products
-        : products.filter(product => product.brand === currentFilter);
-
-    filteredProducts.forEach(product => {
-
-        const card = document.createElement('div');
-
-        card.className = 'product-card';
-
-        card.innerHTML = `
-
-            <div class="card-img-wrap">
-                <img src="${product.image}" class="card-img">
-            </div>
-
-            <div class="card-body">
-
-                <h3>${product.name}</h3>
-
-                <p class="price">
-                    $${product.price}
-                </p>
-
-                <button class="view-btn">
-                    Ver más
-                </button>
-
-            </div>
-        `;
-
-        card.addEventListener('click', () => {
-
-            openModal(product);
-        });
-
-        productsGrid.appendChild(card);
-    });
-}
-
-renderProducts();
+    products.forEach(product => {
 
         const card = document.createElement('div');
 
@@ -605,7 +559,7 @@ if (loginForm) {
 
 console.log('NEXUS GPU FULL CARGADO');
 // ============================================
-// FILTROS
+// FILTROS DE PRODUCTOS
 // ============================================
 
 const filterButtons = document.querySelectorAll('.filter-btn');
@@ -614,15 +568,57 @@ filterButtons.forEach(button => {
 
     button.addEventListener('click', () => {
 
+        // cambiar botón activo
         filterButtons.forEach(btn => {
             btn.classList.remove('active');
         });
 
         button.classList.add('active');
 
-        currentFilter = button.dataset.filter;
+        const filter = button.dataset.filter;
 
-        renderProducts();
+        // limpiar productos
+        productsGrid.innerHTML = '';
+
+        // filtrar
+        const filtered = filter === 'all'
+            ? products
+            : products.filter(product => product.brand === filter);
+
+        // renderizar
+        filtered.forEach(product => {
+
+            const card = document.createElement('div');
+
+            card.className = 'product-card';
+
+            card.innerHTML = `
+
+                <div class="card-img-wrap">
+                    <img src="${product.image}" class="card-img">
+                </div>
+
+                <div class="card-body">
+
+                    <h3>${product.name}</h3>
+
+                    <p class="price">$${product.price}</p>
+
+                    <button class="view-btn">
+                        Ver más
+                    </button>
+
+                </div>
+            `;
+
+            card.addEventListener('click', () => {
+                openModal(product);
+            });
+
+            productsGrid.appendChild(card);
+
+        });
+
     });
 
 });
