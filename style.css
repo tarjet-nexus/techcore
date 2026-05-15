@@ -1756,3 +1756,37 @@ h1,h2,h3,h4 { font-family: 'Orbitron', monospace; letter-spacing: 0.04em; }
 
     color: var(--purple-light);
 }
+/* ============================================
+   FORZAR BOTONES MORADOS CARRITO
+============================================ */
+
+.qty-btn {
+
+    background: linear-gradient(135deg, #6b00d4, #9b30ff) !important;
+
+    color: white !important;
+
+    border: none !important;
+
+    border-radius: 10px !important;
+
+    width: 34px !important;
+    height: 34px !important;
+
+    font-size: 1.1rem !important;
+    font-weight: bold !important;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.qty-btn:hover {
+
+    background: linear-gradient(135deg, #9b30ff, #bf70ff) !important;
+
+    box-shadow:
+        0 0 15px rgba(155,48,255,0.6) !important;
+
+    transform: scale(1.08);
+}
