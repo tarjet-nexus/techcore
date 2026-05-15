@@ -1622,3 +1622,41 @@ h1,h2,h3,h4 { font-family: 'Orbitron', monospace; letter-spacing: 0.04em; }
   .cart-item-controls { grid-column: 1 / -1; flex-direction: row; justify-content: space-between; }
   .social-buttons { flex-direction: column; }
 }
+/* ============================================
+   BOTONES PRODUCTOS
+============================================ */
+
+.view-btn,
+.add-cart-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+
+    background: linear-gradient(135deg, #6b00d4, #9b30ff);
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 0 12px rgba(155,48,255,0.35);
+}
+
+.view-btn:hover,
+.add-cart-btn:hover {
+
+    background: linear-gradient(135deg, #9b30ff, #bf70ff);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 18px rgba(155,48,255,0.7),
+        0 0 35px rgba(155,48,255,0.3);
