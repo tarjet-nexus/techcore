@@ -405,13 +405,19 @@ function openModal(product) {
 
     modal.classList.add('open');
 
-    modalContent.innerHTML = `
+modalContent.innerHTML = `
+
+    <div class="modal-product-layout">
+
+        <h2 class="modal-product-title">
+            ${product.name}
+        </h2>
 
         <img src="${product.image}" class="modal-product-img">
 
-        <h2>${product.name}</h2>
-
-        <h3>$${product.price}</h3>
+        <h3 class="modal-product-price">
+            $${product.price}
+        </h3>
 
         <div class="modal-specs">
 
@@ -430,7 +436,9 @@ function openModal(product) {
         <button class="add-cart-btn" onclick="addToCart(${product.id})">
             Añadir al carrito
         </button>
-    `;
+
+    </div>
+`;
 }
 
 if (modalClose) {
