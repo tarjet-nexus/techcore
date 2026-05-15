@@ -528,9 +528,20 @@ function updateCart() {
         cartItemsList.appendChild(div);
     });
 
-    cartTotal.textContent = `$${total.toFixed(2)}`;
+const subtotal = total;
+const tax = subtotal * 0.12;
+const finalTotal = subtotal + tax;
 
-    cartBadge.textContent = items;
+document.getElementById('cartSubtotal').textContent =
+    `$${subtotal.toFixed(2)}`;
+
+document.getElementById('cartTax').textContent =
+    `$${tax.toFixed(2)}`;
+
+cartTotal.textContent =
+    `$${finalTotal.toFixed(2)}`;
+
+cartBadge.textContent = items;
 }
 
 function changeQty(id, amount) {
