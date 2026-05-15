@@ -1660,3 +1660,79 @@ h1,h2,h3,h4 { font-family: 'Orbitron', monospace; letter-spacing: 0.04em; }
     box-shadow:
         0 0 18px rgba(155,48,255,0.7),
         0 0 35px rgba(155,48,255,0.3);
+/* ============================================
+   MODAL PRODUCTO CENTRADO
+============================================ */
+
+.modal-product-layout {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 40px 30px;
+}
+
+.modal-product-title {
+
+    font-size: 2rem;
+    margin-bottom: 25px;
+
+    color: var(--purple-light);
+
+    text-shadow: 0 0 15px rgba(155,48,255,0.5);
+}
+
+.modal-product-img {
+
+    width: 280px;
+    max-width: 100%;
+
+    object-fit: contain;
+
+    margin-bottom: 25px;
+
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+}
+
+.modal-product-price {
+
+    font-size: 2rem;
+    margin-bottom: 25px;
+
+    color: var(--cyan);
+}
+
+.modal-specs {
+
+    width: 100%;
+    max-width: 420px;
+
+    background: rgba(255,255,255,0.03);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    padding: 20px;
+
+    margin-bottom: 25px;
+
+    text-align: left;
+}
+
+.modal-specs p {
+
+    margin-bottom: 12px;
+
+    font-size: 1rem;
+
+    color: var(--text);
+}
+
+.modal-specs strong {
+
+    color: var(--purple-light);
+}
