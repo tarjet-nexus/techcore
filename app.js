@@ -529,7 +529,7 @@ function updateCart() {
     });
 
 const subtotal = total;
-const tax = subtotal * 0.12;
+const tax = subtotal * 0.15;
 const finalTotal = subtotal + tax;
 
 document.getElementById('cartSubtotal').textContent =
