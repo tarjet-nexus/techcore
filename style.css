@@ -932,7 +932,7 @@ h1,h2,h3,h4 { font-family: 'Orbitron', monospace; letter-spacing: 0.04em; }
     text-align: center;
     gap: 20px;
     width: 100%;
-    max-width: 500px;
+    max-width: 380px;
     margin: 0 auto;
     padding: 40px;
 }
@@ -1014,7 +1014,7 @@ h1,h2,h3,h4 { font-family: 'Orbitron', monospace; letter-spacing: 0.04em; }
 
 .modal-specs {
     width: 90%;
-    max-width: 420px;
+    max-width: 320px;
     display: flex;
     flex-direction: column;
     gap: 12px;
